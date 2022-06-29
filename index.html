@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 | Javascript | Conversion Exercises | Conditional Statements </title>
+
+
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+            <form action="#" method="">
+                 <h1>Weight Converter</h1>
+                 <p>A weight converter for kilograms to pounds, ounce, grams, milligrams, micrograms, stone</p>
+            <div class="container">
+            <input type="number"/>
+                <select>
+                <option>pounds</option>
+                <option>ounce</option>
+                <option>grams</option>
+                <option>milligrams</option>
+                <option>micrograms</option>
+                <option>stone</option>
+            </select>
+            </div>
+            
+            <div style="margin-top: 10px;">
+            <button onclick="convertWeight();">Convert weight</button> 
+             </div>
+            <p class="results"></p>
+        </form>   
+  
+
+
+    <script>
+       
+            function convertWeight(){
+                var results = document.querySelector(".results");
+                var weight = document.querySelector("input").value;
+                var option = document.querySelector("select").value;
+
+
+                if (!weight){
+                    alert("Please enter a weight in number format");
+                } else {
+                    if (option ==="pounds"){
+                    var result = weight * 2.2046;
+                    var unit = " pounds";
+                } else if (option === "ounce"){
+                    var result = weight * 35.274;  
+                    var unit = " lbs";
+                } else if (option === "grams"){
+                    var result = weight * 1000;  
+                    var unit = " milligrams";
+                } else if (option === "milligrams"){
+                    var result = weight * 100000;  
+                    var unit = " milligrams";
+                }else if (option === "micrograms"){
+                    var result = weight * 1000000000;  
+                    var unit = " micrograms";
+                } else if (option === "stone"){
+                    var result = weight * 0.157473;  
+                    var unit = " stone";
+                }
+                results.style.display = "block";
+                 results.innerHTML = result.toFixed(2) + unit;
+               }
+             };
+                
+             
+    </script>
+
+</body>
+</html>
